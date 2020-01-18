@@ -1,9 +1,9 @@
 """
-This script runs the gong_family_site application using a development server.
+This script runs the gong_web application using a development server.
 """
 
 from os import environ
-from gong_family_site import app
+from gong_web import app
 
 if __name__ == '__main__':
     HOST = environ.get('SERVER_HOST', 'localhost')
