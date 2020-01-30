@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@4.4.1",
+      "destination": "gong_web/static/twitter-bootstrap/"
+    },
+    {
+      "library": "popper.js@1.16.1",
+      "destination": "gong_web/popper.js/"
+    }
+  ]
+}

@@ -16,11 +16,25 @@ def home():
         year=datetime.now().year,
     )
 
-@app.route('/test')
-def test():
+@app.route('/recent-events')
+def recent_events():
+    """Renders the past events page."""
     return render_template(
-        'layout.html'
-        )
+        'recent-events.html',
+        title='Events',
+        year=datetime.now().year,
+        message='Events Page.'
+    )
+
+@app.route('/about')
+def about():
+    """Renders the about page."""
+    return render_template(
+        'about.html',
+        title='About',
+        year=datetime.now().year,
+        message='Your application description page.'
+    )
 
 @app.route('/contact')
 def contact():
@@ -32,12 +46,12 @@ def contact():
         message='Your contact page.'
     )
 
-@app.route('/about')
-def about():
-    """Renders the about page."""
+@app.route('/swag')
+def swag():
+    """Renders the merchandise page."""
     return render_template(
-        'about.html',
-        title='About',
+        'swag.html',
+        title='SWAG',
         year=datetime.now().year,
-        message='Your application description page.'
+        message='Your merchandise page.'
     )
