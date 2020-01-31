@@ -34,9 +34,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="gong_web\" />
+    <Folder Include="gong_web\popper.js\" />
+    <Folder Include="gong_web\popper.js\esm\" />
+    <Folder Include="gong_web\popper.js\umd\" />
     <Folder Include="gong_web\static\" />
     <Folder Include="gong_web\static\content\" />
     <Folder Include="gong_web\static\fonts\" />
+    <Folder Include="gong_web\static\pics\" />
     <Folder Include="gong_web\static\scripts\" />
     <Folder Include="gong_web\static\twitter-bootstrap\" />
     <Folder Include="gong_web\static\twitter-bootstrap\css\" />
@@ -61,12 +65,26 @@
     <Content Include="bootstrap.min.css.map" />
     <Content Include="bootstrap.min.js" />
     <Content Include="bootstrap.min.js.map" />
+    <Content Include="gong_web\popper.js\esm\popper-utils.js" />
+    <Content Include="gong_web\popper.js\popper-utils.min.js" />
+    <Content Include="gong_web\popper.js\umd\popper.js" />
+    <Content Include="gong_web\static\pics\events.jpg" />
+    <Content Include="gong_web\static\pics\game-play.jpeg" />
+    <Content Include="gong_web\static\pics\shirt.jpg" />
     <Content Include="gong_web\static\twitter-bootstrap\css\bootstrap-grid.css" />
     <Content Include="gong_web\static\twitter-bootstrap\css\bootstrap.min.css" />
     <Content Include="gong_web\templates\swag.html" />
     <Content Include="gong_web\templates\recent-events.html" />
     <Content Include="gong_web\templates\layout - Original.html" />
     <Content Include="libman.json" />
+    <Content Include="popper-utils.js" />
+    <Content Include="popper-utils.js.map" />
+    <Content Include="popper-utils.min.js" />
+    <Content Include="popper-utils.min.js.map" />
+    <Content Include="popper.js" />
+    <Content Include="popper.js.map" />
+    <Content Include="popper.min.js" />
+    <Content Include="popper.min.js.map" />
     <Content Include="requirements.txt" />
     <Content Include="gong_web\static\content\bootstrap.css" />
     <Content Include="gong_web\static\content\bootstrap.min.css" />
