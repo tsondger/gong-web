@@ -9,8 +9,25 @@ def home():
     """Renders the home page."""
     return render_template(
         'index.html',
-        title='Home Page',
-        year=datetime.now().year,
+        year = datetime.now().year,
+    )
+
+@app.route('/about')
+def about():
+    """Renders the about page."""
+    return render_template(
+        'about.html',
+        title = 'About GONG',
+        year = datetime.now().year
+    )
+
+@app.route('/contact')
+def contact():
+    """Renders the contact page."""
+    return render_template(
+        'contact.html',
+        title = 'GONG Masters',
+        year = datetime.now().year
     )
 
 @app.route('/recent-events')
@@ -21,26 +38,6 @@ def recent_events():
         title='Events',
         year=datetime.now().year,
         message='Events Page.'
-    )
-
-@app.route('/about')
-def about():
-    """Renders the about page."""
-    return render_template(
-        'about.html',
-        title='About',
-        year=datetime.now().year,
-        message='Your application description page.'
-    )
-
-@app.route('/contact')
-def contact():
-    """Renders the contact page."""
-    return render_template(
-        'contact.html',
-        title='Contact',
-        year=datetime.now().year,
-        message='Your contact page.'
     )
 
 @app.route('/swag')

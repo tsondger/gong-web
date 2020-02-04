@@ -70,7 +70,9 @@
     <Content Include="gong_web\popper.js\umd\popper.js" />
     <Content Include="gong_web\static\pics\events.jpg" />
     <Content Include="gong_web\static\pics\game-play.jpeg" />
+    <Content Include="gong_web\static\pics\jk.jpg" />
     <Content Include="gong_web\static\pics\shirt.jpg" />
+    <Content Include="gong_web\static\pics\tim.jpg" />
     <Content Include="gong_web\static\twitter-bootstrap\css\bootstrap-grid.css" />
     <Content Include="gong_web\static\twitter-bootstrap\css\bootstrap.min.css" />
     <Content Include="gong_web\templates\swag.html" />

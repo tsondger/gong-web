@@ -17,16 +17,13 @@
         <div class="navbar-brand">
             <ul class="nav">
                 <li class="nav-item active"><a class="m-2" href="{{ url_for('home') }}">Home</a></li>
-                <li><a class="m-2" href="{{ url_for('recent_events') }}">Recent Events</a></li>
                 <li><a class="m-2" href="{{ url_for('about') }}">About</a></li>
                 <li><a class="m-2" href="{{ url_for('contact') }}">Contact</a></li>
-                <li><a class="m-2" href="{{ url_for('swag') }}">Swag</a></li>
+                <li><a class="m-2" href="{{ url_for('swag') }}">SWAG</a></li>
+                <li><a class="m-2" href="{{ url_for('recent_events') }}">Recent Events</a></li>
             </ul>
         </div>
     </div>
-
-
-
 
     <div class="container text-body">
         {% block content %}{% endblock %}
