@@ -2,6 +2,8 @@
 from datetime import datetime
 from flask import render_template
 from gong_web import app
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 @app.route('/')
 @app.route('/home')
@@ -30,6 +32,23 @@ def contact():
         year = datetime.now().year
     )
 
+@app.route('/swag')
+def swag():
+    """Renders the merchandise page."""
+    
+    scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+    #creds = ServiceAccountCredentials.from_json_keyfile_name('../static/credentials/gong-secret.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('C:/gong-web/gong-web/gong-web/gong_web/static/credentials/gong-creds.json', scope)  # Need a relative file path 
+    client = gspread.authorize(creds)  # Getting an error about it not being used in a project before or disabled, don't think I'm enabling it correctly in the project
+
+    data = client.open('GONG-events').sheet1
+    
+    return render_template(
+        'swag.html',
+        title = 'SWAG',
+        year = datetime.now().year
+    )
+
 @app.route('/recent-events')
 def recent_events():
     """Renders the past events page."""
@@ -40,12 +59,3 @@ def recent_events():
         message='Events Page.'
     )
 
-@app.route('/swag')
-def swag():
-    """Renders the merchandise page."""
-    return render_template(
-        'swag.html',
-        title='SWAG',
-        year=datetime.now().year,
-        message='Your merchandise page.'
-    )
