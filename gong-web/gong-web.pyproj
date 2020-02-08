@@ -75,6 +75,7 @@
     <Content Include="gong_web\static\pics\tim.jpg" />
     <Content Include="gong_web\static\twitter-bootstrap\css\bootstrap-grid.css" />
     <Content Include="gong_web\static\twitter-bootstrap\css\bootstrap.min.css" />
+    <Content Include="gong_web\static\twitter-bootstrap\css\primary-color-override.css" />
     <Content Include="gong_web\templates\swag.html" />
     <Content Include="gong_web\templates\recent-events.html" />
     <Content Include="gong_web\templates\layout - Original.html" />
