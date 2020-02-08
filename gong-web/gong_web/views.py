@@ -1,6 +1,4 @@
 
-## This is a test
-
 from datetime import datetime
 from flask import render_template
 from gong_web import app
