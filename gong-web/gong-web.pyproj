@@ -40,7 +40,6 @@
     <Folder Include="gong_web\static\" />
     <Folder Include="gong_web\static\content\" />
     <Folder Include="gong_web\static\fonts\" />
-    <Folder Include="gong_web\static\credentials\" />
     <Folder Include="gong_web\static\pics\" />
     <Folder Include="gong_web\static\scripts\" />
     <Folder Include="gong_web\static\twitter-bootstrap\" />
@@ -69,7 +68,6 @@
     <Content Include="gong_web\popper.js\esm\popper-utils.js" />
     <Content Include="gong_web\popper.js\popper-utils.min.js" />
     <Content Include="gong_web\popper.js\umd\popper.js" />
-    <Content Include="gong_web\static\credentials\gong-creds.json" />
     <Content Include="gong_web\static\pics\events.jpg" />
     <Content Include="gong_web\static\pics\game-play.jpeg" />
     <Content Include="gong_web\static\pics\jk.jpg" />
