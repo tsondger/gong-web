@@ -1,4 +1,6 @@
 
+## This is a test
+
 from datetime import datetime
 from flask import render_template
 from gong_web import app
@@ -11,7 +13,7 @@ def home():
     """Renders the home page."""
     return render_template(
         'index.html',
-        year = datetime.now().year,
+        year = datetime.now().year
     )
 
 @app.route('/about')
@@ -35,14 +37,6 @@ def contact():
 @app.route('/swag')
 def swag():
     """Renders the merchandise page."""
-    
-    scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-    #creds = ServiceAccountCredentials.from_json_keyfile_name('../static/credentials/gong-secret.json', scope)
-    creds = ServiceAccountCredentials.from_json_keyfile_name('C:/gong-web/gong-web/gong-web/gong_web/static/credentials/gong-creds.json', scope)  # Need a relative file path 
-    client = gspread.authorize(creds)  # Getting an error about it not being used in a project before or disabled, don't think I'm enabling it correctly in the project
-
-    data = client.open('GONG-events').sheet1
-    
     return render_template(
         'swag.html',
         title = 'SWAG',
@@ -52,6 +46,14 @@ def swag():
 @app.route('/recent-events')
 def recent_events():
     """Renders the past events page."""
+    scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+    #creds = ServiceAccountCredentials.from_json_keyfile_name('../static/credentials/gong-secret.json', scope)
+    # Change
+    creds = ServiceAccountCredentials.from_json_keyfile_name('C:/gong-web/gong-web/gong-web/gong_web/static/credentials/gong-creds.json', scope)  # Need a relative file path 
+    client = gspread.authorize(creds)  # Getting an error about it not being used in a project before or disabled, don't think I'm enabling it correctly in the project
+
+    data = client.open('GONG-events').sheet1
+
     return render_template(
         'recent-events.html',
         title='Events',
