@@ -4,8 +4,8 @@
 from datetime import datetime
 from flask import render_template
 from gong_web import app
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+#import gspread
+#from oauth2client.service_account import ServiceAccountCredentials
 
 @app.route('/')
 @app.route('/home')
