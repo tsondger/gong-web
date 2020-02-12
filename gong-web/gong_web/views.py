@@ -2,6 +2,12 @@
 from datetime import datetime
 from flask import render_template
 from gong_web import app
+
+import httplib2
+import os
+from apiclient import discovery
+from google.oauth2 import service_account
+
 #import gspread
 #from oauth2client.service_account import ServiceAccountCredentials
 
@@ -44,11 +50,22 @@ def swag():
 @app.route('/recent-events')
 def recent_events():
     """Renders the past events page."""
-    scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-    #creds = ServiceAccountCredentials.from_json_keyfile_name('../static/credentials/gong-secret.json', scope)
-    # Change
-    creds = ServiceAccountCredentials.from_json_keyfile_name('C:/gong-web/gong-web/gong-web/gong_web/static/credentials/gong-creds.json', scope)  # Need a relative file path 
-    client = gspread.authorize(creds)  # Getting an error about it not being used in a project before or disabled, don't think I'm enabling it correctly in the project
+
+    ## Pasted in below
+
+    scopes = ["https://www.googleapis.com/auth/drive", 
+              "https://www.googleapis.com/auth/drive.file", 
+              "https://www.googleapis.com/auth/spreadsheets"]
+    secret_file = os.path.join(os.getcwd(), 'Credentials\\client_secret.json')  # Might have to change to \\
+
+    spreadsheet_id = '1eP_ZRzV81KMMiofMP7XV_TBUYGLAckKBzLqzPPBpNnk'  # Change to mine
+    #range_name = 'Sheet1!A1:D2'
+    
+    # Producing the wrong file path
+    credentials = service_account.Credentials.from_service_account_file(secret_file, scopes = scopes)
+    service = discovery.build('sheets', 'v4', credentials = credentials)
+
+    ## Pasted in above
 
     data = client.open('GONG-events').sheet1
 
